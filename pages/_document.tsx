@@ -16,11 +16,6 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<meta charSet='utf-8' />
-					<meta
-						name='viewport'
-						content='initial-scale=1.0, width=device-width'
-					/>
 					<meta
 						name='description'
 						content='This is super pyper search system :)'
@@ -101,7 +96,6 @@ class MyDocument extends Document {
 						content='static/image/ms-icon-144x144.png'
 					/>
 					<meta name='theme-color' content='#ffffff' />
-					<title>Ushoogle - best search system ever!</title>
 				</Head>
 				<body>
 					<Main />
