@@ -16,14 +16,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<link rel='icon' href='/favicon.ico' />
 				<title>Ushoogle - best search system ever!</title>
 			</Head>
-			<Component {...pageProps}>
-				<NextNprogress
-					color='#29D'
-					startPosition={0.3}
-					stopDelayMs={200}
-					height={3}
-				/>
-			</Component>
+			<NextNprogress
+				color='#29D'
+				startPosition={0.3}
+				stopDelayMs={200}
+				height={3}
+			/>
+			<Component {...pageProps} />
 		</>
 	);
 }

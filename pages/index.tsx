@@ -12,7 +12,7 @@ const MainPage: FC = () => {
 	const handleSubmitForm = (e: FormEvent) => {
 		e.preventDefault();
 
-		router.push(`/result?term=${searchValue}`);
+		router.push(`/result?term=${searchValue}&start=1`);
 	};
 
 	const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {

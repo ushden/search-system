@@ -1,34 +1,26 @@
 import { FC } from 'react';
+import { ResultItemType } from '../pages/result';
 
 type ResultItemProps = {
-	link: string;
-	title: string;
-	desc: string;
-	formattedUrl: string;
+	item: ResultItemType;
 };
 
-export const ResultItem: FC<ResultItemProps> = ({
-	link,
-	title,
-	desc,
-	formattedUrl,
-}) => {
+export const ResultItem: FC<ResultItemProps> = ({ item }) => {
 	return (
-		<div className='max-w-full break-words shadow-md p-1 mb-2 sm:w-4/5 lg:w-3/6'>
-			<div>
+		<div className='max-w-full break-words shadow-md p-1 mb-3 sm:w-4/5 lg:w-3/6'>
+			<div className='flex items-center'>
 				<h2 className='text-green-500 text-xl'>
-					<a href={link} target='_blank'>
-						{title}
+					<a href={item.link} target='_blank'>
+						{item.title}
 					</a>
 				</h2>
-				<span className='line-clamp-1 text-gray-400 mb-1'>
-					<a href={link} target='_blank'>
-						{formattedUrl}
-					</a>
-				</span>
-				<p className='line-clamp-4'>{desc}</p>
 			</div>
-			<div></div>
+			<span className='line-clamp-1 text-gray-400 mb-1'>
+				<a href={item.link} target='_blank'>
+					{item.formattedUrl}
+				</a>
+			</span>
+			<p className='line-clamp-4'>{item.snippet}</p>
 		</div>
 	);
 };
