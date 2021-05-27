@@ -15,6 +15,10 @@ export type ResultItemType = {
 	snippet: string;
 	title: string;
 	formattedUrl: string;
+	displayLink?: string;
+	image?: {
+		contextLink: string;
+	};
 };
 
 type SearchInformation = {
@@ -92,7 +96,7 @@ const ResultPage: FC<ResultPageProps> = ({ result }) => {
 			<Head>
 				<title>Ushooglo - {router.query.term}</title>
 			</Head>
-			<header>
+			<header className='mb-2'>
 				<Header
 					value={value}
 					onChange={handleChangeInput}
@@ -103,12 +107,12 @@ const ResultPage: FC<ResultPageProps> = ({ result }) => {
 				<div className='flex items-center justify-center'>
 					<button
 						onClick={handleSearchQuery}
-						className='p-1 border-green-500 border focus:outline-none focus:opacity-80 hover:opacity-80'>
+						className='p-1 text-blue-600 rounded-md px-3 border-green-500 border focus:outline-none focus:opacity-80 hover:opacity-80'>
 						Веб поиск
 					</button>
 					<button
 						onClick={handleImageSearchClick}
-						className=' ml-2 p-1 border-green-500 border focus:outline-none focus:opacity-80 hover:opacity-80'>
+						className=' ml-2 p-1 text-blue-600 rounded-md px-3 border-green-500 border focus:outline-none focus:opacity-80 hover:opacity-80'>
 						Картинки
 					</button>
 				</div>
@@ -117,7 +121,7 @@ const ResultPage: FC<ResultPageProps> = ({ result }) => {
 					time={result.searchInformation.formattedSearchTime}
 				/>
 				{router.query.type ? (
-					<section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+					<section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1'>
 						{result.items.map((item, i) => (
 							<ResultImageItem item={item} key={item.title + i} />
 						))}
