@@ -1,6 +1,8 @@
 ##USHOOGLO
 
 Search engine following the example of Google, the ability to search by pictures or websites.
+</br>
+</br>
 **Technologies that I used:**
 - NextJS (SSR)  
 - Typescript
